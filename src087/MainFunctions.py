@@ -147,7 +147,6 @@ def selectedIcon(screen,selected):
         screen.blit(area,mouseat.move((-1*rn,-1*rn)).center)
 
 def selectedTower(screen,selected,mousepos):
-    print("function called")
     selected.writeToolBar(screen)
 
 def dispIcons(screen,mousepos,font,frametime):
