@@ -5,6 +5,7 @@ from pygame.locals import *
 import EventFunctions
 import sys
 
+info_state = ''
 def makeIcons():
     del openbuttoninfo[:]
     openbuttoninfo.append(pygame.Surface((25*len(iconlist)+5,25)))
@@ -59,7 +60,26 @@ def dispText(screen,wavenum):
     textpos4 = text4.get_rect(left=textpos3.right,top=textpos3.top)
     mapvar.nextWaveRect = textpos4
 
-    for i in range(1,5):
+    text5 = font.render("*Notification Center*",1,(255,255,255))
+    textpos5 = text5.get_rect(left=textpos2.right+200,top=5)
+
+    #notify some informations to users
+    # info_state: 1 -> tower_cost > money -> not enough money
+    # info_state: 2 -> you one that one
+    if player.health == 0:
+        info = "You have died!"
+
+    if info_state == '1':
+        info = "Not Enough Money"
+    elif info_state == '2':
+        info = "You won that one!"
+
+    else:
+        info = 'Nothing to notify'
+    text6 = font.render(info,1,(255,255,255))
+    textpos6 = text6.get_rect(left=textpos5.left,top=textpos5.bottom)
+
+    for i in range(1,7):
         screen.blit(eval("text"+str(i)),eval("textpos"+str(i)))
 
     font = pygame.font.Font(None,28)
@@ -127,6 +147,7 @@ def selectedIcon(screen,selected):
         screen.blit(area,mouseat.move((-1*rn,-1*rn)).center)
 
 def selectedTower(screen,selected,mousepos):
+    print("function called")
     selected.writeToolBar(screen)
 
 def dispIcons(screen,mousepos,font,frametime):

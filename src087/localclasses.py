@@ -142,7 +142,7 @@ class Icon():
 
 class Tower():
     def __init__(self):
-        self.tempimage = pygame.transform.smoothscale(imgLoad(os.path.join('towerimgs','Fighter.png')),(squsize,squsize))
+        self.tempimage = pygame.transform.smoothscale(imgLoad(os.path.join('towerimgs','Archer.png')),(squsize,squsize))
         self.image = self.tempimage.copy()
         self.image.fill((255,255,255,50))
         self.image.blit(self.tempimage,(0,0))
@@ -235,7 +235,7 @@ class Tower():
                     nt = pickle.load(open(os.path.join(player.name,towername),"r"))
                     towerlist.append(nt)
                     iconlist.append(nt.icon)
-                    nt.tempimage = pygame.transform.smoothscale(imgLoad(os.path.join('towerimgs','Fighter.png')),(squsize,squsize))
+                    nt.tempimage = pygame.transform.smoothscale(imgLoad(os.path.join('towerimgs','Archer.png')),(squsize,squsize))
                     nt.image = nt.tempimage.copy()
                     nt.image.fill((255,255,255,50))
                     nt.image.blit(nt.tempimage,(0,0))

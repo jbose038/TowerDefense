@@ -8,6 +8,7 @@ import time
 from sys import exit as sysexit
 from pygame.locals import *
 import pickle
+import ctypes
 
 scrwid = 800 #Screen width.
 scrhei = 600 #Screen height. Uses 4:3 ratio.
@@ -123,6 +124,7 @@ class Map():
             print "You Won!!!"
             sysexit(1)
 
+
 mapvar = Map()
 
 class Player():
@@ -137,7 +139,7 @@ class Player():
 
         self.currentChain = 0.0
         self.health = 10
-        self.money = 30
+        self.money = 50
 
         self.modDict = dict()
 

@@ -35,7 +35,8 @@ def leftSelectedIcon(event,selected):
         if localdefs.player.money>=selected.tower.cost:
             return placeTower(event, selected)
         else:
-            print "Not Enough Money"
+            MainFunctions.info_state = '1'
+            print ("Not Enough Money")
     return selected,False,0
 
 def leftAlreadySelected(event,selected, screen):
@@ -70,11 +71,12 @@ def nextWave(event,wavenum,Sender):
     if ('wave'+str(wavenum)) not in localdefs.mapvar.mapdict:
         if len(localdefs.enemylist) == 0:
             localdefs.mapvar.currentCompleted = 1
-            print "You won that one!"
+            MainFunctions.info_state = '2'
+            print ("You won that one!")
             localdefs.player.save()
             sys.exit()
         else:
-            print "There are still enemies on the screen!"
+            print ("There are still enemies on the screen!")
             wavenum-=1
             localdefs.mapvar.hasEnded = 1
     return wavenum
