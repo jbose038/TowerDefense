@@ -395,7 +395,7 @@ def main(screen,clock):
     run = 1
     imgs = dict()
     rects = dict()
-    for num,i in enumerate(["playmap","edittowers","options"]):
+    for num,i in enumerate(["playmap","edittowers"]):
         imgs[i] = localdefs.imgLoad(os.path.join("menuimages",i+".png"))
         rects[i] = imgs[i].get_rect(centerx=localdefs.scrwid/2,centery=(num+1)*localdefs.scrhei/5)
     while run:

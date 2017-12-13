@@ -146,7 +146,7 @@ class Tower():
         self.image = self.tempimage.copy()
         self.image.fill((255,255,255,50))
         self.image.blit(self.tempimage,(0,0))
-        self.cost = 25
+        self.cost = 20
         self.targetTimer = 0
         self.icon = Icon(self)
         self.outyet = False

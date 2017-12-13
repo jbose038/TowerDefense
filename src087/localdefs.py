@@ -161,7 +161,7 @@ class Player():
         except:
             self.mapscompleted = list()
 
-        towernum = 1+sum([1 for map in self.mapscompleted if "Basic" in map])
+        towernum = 3+sum([1 for map in self.mapscompleted if "Basic" in map])
 
         import localclasses
         localclasses.Tower.loadTowers()

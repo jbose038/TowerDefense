@@ -66,6 +66,12 @@ def nextWave(event,wavenum,Sender):
     localdefs.mapvar.rollNext = 30
     wavenum+=1
     localdefs.mapvar.wavesSinceLoss+=1
+
+    #play BackGroundMusic
+    pygame.mixer.music.load('backgroundimgs/moonlight.wav')
+    pygame.mixer.music.play(-1, 0.0)
+    pygame.mixer.music.set_volume(0.25)
+
     if ('wave'+str(wavenum)) in localdefs.mapvar.mapdict:
         Sender(wavenum)
     if ('wave'+str(wavenum)) not in localdefs.mapvar.mapdict:
